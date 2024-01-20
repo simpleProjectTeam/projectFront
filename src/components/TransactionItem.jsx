@@ -10,11 +10,9 @@ const TransactionItem = ({
   deleteTransaction,
   editTransaction,
   formatCurrency,
-  formatDate,
 }) => {
   return (
     <li key={index}>
-      <div className="date">{formatDate(transaction.date)}</div>
       <div className="description">{transaction.description}</div>
       <div className={`amount ${transaction.amount < 0 ? 'expense' : ''}`}>
         {transaction.amount > 0 ? '+' : ''}
@@ -37,14 +35,6 @@ const TransactionItem = ({
                 type="text"
                 value={editedTransaction.amount}
                 onChange={(e) => setEditedTransaction({ ...editedTransaction, amount: e.target.value })}
-              />
-            </label>
-            <label>
-              날짜 (YYYYMMDD):
-              <input
-                type="text"
-                value={editedTransaction.date}
-                onChange={(e) => setEditedTransaction({ ...editedTransaction, date: e.target.value })}
               />
             </label>
             <button className="edit" onClick={() => handleEditTransaction(index)}>

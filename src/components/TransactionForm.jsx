@@ -5,7 +5,6 @@ const TransactionForm = ({
   setNewTransaction,
   handleTransaction,
   isNumberOrNegative,
-  isValidDate,
 }) => {
   return (
     <div>
@@ -23,14 +22,6 @@ const TransactionForm = ({
           type="text"
           value={newTransaction.amount}
           onChange={(e) => setNewTransaction({ ...newTransaction, amount: e.target.value })}
-        />
-      </label>
-      <label>
-        날짜 (YYYYMMDD):
-        <input
-          type="text"
-          value={newTransaction.date}
-          onChange={(e) => setNewTransaction({ ...newTransaction, date: e.target.value })}
         />
       </label>
       <button className="income" onClick={() => handleTransaction('income')}>

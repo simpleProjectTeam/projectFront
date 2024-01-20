@@ -9,45 +9,38 @@ const App = () => {
     description: '',
     amount: '',
     type: 'income',
-    date: '',
   });
   const [editingIndex, setEditingIndex] = useState(-1);
   const [editedTransaction, setEditedTransaction] = useState({
     description: '',
     amount: '',
     type: 'income',
-    date: '',
   });
 
   const isNumberOrNegative = (value) => {
     return /^-?\d+$/.test(value);
   };
 
-  const isValidDate = (dateString) => {
-    const regex = /^\d{8}$/;
-    return regex.test(dateString);
-  };
-
   const handleTransaction = (type) => {
-    if (isNumberOrNegative(newTransaction.amount) && isValidDate(newTransaction.date)) {
+    if (isNumberOrNegative(newTransaction.amount)) {
       const signedAmount = type === 'income' ? parseInt(newTransaction.amount, 10) : -parseInt(newTransaction.amount, 10);
       setTransactions([...transactions, { ...newTransaction, amount: signedAmount }]);
-      setNewTransaction({ description: '', amount: '', type: 'income', date: '' });
+      setNewTransaction({ description: '', amount: '', type: 'income' });
     } else {
-      alert('유효한 숫자 또는 음수를 입력하고, 올바른 날짜 형식(YYYYMMDD)으로 입력하세요.');
+      alert('유효한 숫자 또는 음수를 입력하세요.');
     }
   };
 
   const handleEditTransaction = (index) => {
-    if (isNumberOrNegative(editedTransaction.amount) && isValidDate(editedTransaction.date)) {
+    if (isNumberOrNegative(editedTransaction.amount)) {
       const editedTransactions = [...transactions];
       const signedAmount = editedTransaction.type === 'income' ? parseInt(editedTransaction.amount, 10) : -parseInt(editedTransaction.amount, 10);
       editedTransactions[index] = { ...editedTransaction, amount: signedAmount };
       setTransactions(editedTransactions);
-      setEditedTransaction({ description: '', amount: '', type: 'income', date: '' });
+      setEditedTransaction({ description: '', amount: '', type: 'income' });
       setEditingIndex(-1);
     } else {
-      alert('유효한 숫자 또는 음수를 입력하고, 올바른 날짜 형식(YYYYMMDD)으로 입력하세요.');
+      alert('유효한 숫자 또는 음수를 입력하세요.');
     }
   };
 
@@ -76,13 +69,6 @@ const App = () => {
     return amount.toLocaleString('en-US');
   };
 
-  const formatDate = (dateString) => {
-    const year = dateString.slice(0, 4);
-    const month = dateString.slice(4, 6);
-    const day = dateString.slice(6, 8);
-    return `${year}.${month}.${day}`;
-  };
-
   return (
     <div className="App">
       <h1>개인수입지출내역</h1>
@@ -97,7 +83,6 @@ const App = () => {
           setNewTransaction={setNewTransaction}
           handleTransaction={handleTransaction}
           isNumberOrNegative={isNumberOrNegative}
-          isValidDate={isValidDate}
         />
       </div>
       <TransactionList
@@ -109,7 +94,6 @@ const App = () => {
         deleteTransaction={deleteTransaction}
         editTransaction={editTransaction}
         formatCurrency={formatCurrency}
-        formatDate={formatDate}
       />
     </div>
   );
