@@ -1,0 +1,126 @@
+/* styles.css */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+  }
+  
+.form-container {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-container form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-container input {
+    width: calc(100% - 20px);
+    padding: 8px;
+    margin-top: 4px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+  }
+  
+  .form-container button {
+    width: 100%;
+    background-color: #2196f3;
+    color: white;
+    border: none;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 0;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .form-container button:last-child {
+    background-color: #f44336;
+  }
+  
+  .account-list-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .account-item {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #fff;
+    position: relative;
+    transition: box-shadow 0.3s ease-in-out;
+  }
+  
+  .account-item:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .account-item input {
+    width: calc(100% - 20px);
+    padding: 8px;
+    margin-top: 4px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+  }
+  
+  .account-item button {
+    width: 80px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .account-item button.edit-button {
+    background-color: #2196f3;
+    margin-left: 10px;
+  }
+  
+  .account-item button.delete-button {
+    background-color: #f44336;
+  }
+  
+  .summary-container {
+    max-width: 400px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .template-container {
+    text-align: center;
+  }
+  
+  .template-title {
+    color: #333;
+  }
+  
+  .charge-sum {
+    color: #2196f3;
+  }
+
+  .charge-minus {
+    color: #f44336;
+  }
