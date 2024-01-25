@@ -86,7 +86,7 @@ function AccountListItem({ account, setAccounts }) {
       ) : (
         <>
             <h2>{content} </h2>
-            <p>{price}원</p>
+            <h3>{price}원</h3>
             <div>
               <button className="edit-button" onClick={onEdit}>수정</button>
             </div>

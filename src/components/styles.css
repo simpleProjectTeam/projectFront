@@ -7,6 +7,7 @@ body {
     font-weight: bold;
   }
   
+  
 .form-container {
     max-width: 400px;
     margin: 0 auto;
@@ -127,9 +128,32 @@ body {
   }
   
   .charge-sum {
-    color: #2196f3;
+    color: #21f380;
   }
 
   .charge-minus {
     color: #f44336;
   }
+
+  .form-container button:hover,
+  .account-item button:hover {
+  opacity: 0.8;
+  transform: scale(0.95);
+}
+
+  .form-container button:active,
+  .account-item button:active {
+  transform: scale(1.05);
+}
+
+  .form-container input:focus,
+  .account-item input:focus {
+  outline: 2px solid #000000;
+  transform: scale(1.00);
+}
+
+.form-container input:hover,
+.account-item input:focus {
+outline: 2px solid #000000;
+transform: scale(1.05);
+}

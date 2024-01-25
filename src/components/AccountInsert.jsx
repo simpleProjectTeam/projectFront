@@ -34,11 +34,11 @@ function AccountInsert({ setAccounts }) {
   };
 
   const handleTransaction = (type) => {
-    // 버튼 종류에 따라 처리
-    const formattedAmount = type === 'income' ? formatAmount(amount) : -formatAmount(amount);
-    onSave(formattedAmount);
+    const formattedAmount = formatAmount(amount);
+    const signedAmount = type === 'income' ? formattedAmount : -formattedAmount;
+    onSave(signedAmount);
   };
-
+  
   const handleChange = (e, setter) => {
     // 입력값 변경 시
     setter(e.target.value);
@@ -63,10 +63,10 @@ function AccountInsert({ setAccounts }) {
           value={amount}
           onChange={(e) => handleChange(e, setAmount)}
         />
-        <button type="button" onClick={() => handleTransaction('income')}>
+        <button type="button" id = "incomeButton" onClick={() => handleTransaction('income')}>
           수입
         </button>
-        <button type="button" onClick={() => handleTransaction('expense')}>
+        <button type="button" id = "expenseButton" onClick={() => handleTransaction('expense')}>
           지출
         </button>
       </form>
