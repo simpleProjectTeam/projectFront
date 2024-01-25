@@ -9,7 +9,6 @@ function AccountListItem({ account, setAccounts }) {
 
   const onDelete = async () => {
     const checkResponse = await fetch(`https://projectback.fly.dev/book/account/${no}`);
-    
     if (checkResponse.status === 200) {
       await fetch(`https://projectback.fly.dev/book/account/${no}`, {
         method: 'DELETE'
@@ -33,7 +32,6 @@ function AccountListItem({ account, setAccounts }) {
   }
 
   const onSaveEdit = async () => {
-  
     await fetch(`https://projectback.fly.dev/book/account/${no}`, {
       method: 'PATCH',
       headers: {
@@ -68,25 +66,33 @@ function AccountListItem({ account, setAccounts }) {
     <div className="account-item">
       {isEditing ? (
         <>
+          <label> 수정 제목 </label>
           <input
             type="text"
             value={editedContent}
             onChange={onContentChange}
+            placeholder="설명"
           />
+          <label> 수정 금액 </label>
           <input
             type="text"
             value={editedPrice}
             onChange={onPriceChange}
+            placeholder="금액" 
           />
-          <button onClick={onSaveEdit}>저장</button>
-          <button onClick={onCancelEdit}>취소</button>
+    <button className="save-button" onClick={onSaveEdit}>저장</button>
+    <button className="cancel-button" onClick={onCancelEdit}>취소</button>
         </>
       ) : (
         <>
-          <p>{content} </p>
-          <p>{price}원</p>
-          <button className="edit-button" onClick={onEdit}>수정</button>
-          <button className="delete-button" onClick={onDelete}>삭제</button>
+            <h2>{content} </h2>
+            <p>{price}원</p>
+            <div>
+              <button className="edit-button" onClick={onEdit}>수정</button>
+            </div>
+            <div>
+              <button className="delete-button" onClick={onDelete}>삭제</button>
+            </div>
         </>
       )}
     </div>

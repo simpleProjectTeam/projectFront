@@ -48,13 +48,15 @@ function AccountInsert({ setAccounts }) {
     <div >
       <form className="form-container">
         <h2 > 거래 내역 작성</h2>
+        <label>제목</label>
         <input
-          placeholder="설명"
+          placeholder="제목"
           type="text"
           value={content}
           onChange={(e) => handleChange(e, setContent)}
         />
-        
+        <div></div>
+        <label>금액</label>
         <input
           placeholder="금액"
           type="text"
@@ -69,9 +71,6 @@ function AccountInsert({ setAccounts }) {
         </button>
       </form>
       <h2> </h2>
-      <div>
-        <h2  className="form-container">거래 내역</h2>
-      </div>
       <h2> </h2>
     </div>
 

@@ -13,6 +13,7 @@ function AccountSummary({ accounts }) {
     );
   }
 
+  // 수입 관리 로직
   const calculateTotalIncome = () => {
     return accounts.reduce((total, account) => {
       const price = parseFloat(account.price.replace(/[^\d.-]/g, '')) || 0; // 숫자 이외의 문자 제거 후 parseFloat
@@ -20,6 +21,7 @@ function AccountSummary({ accounts }) {
     }, 0);
   };
 
+  // 지출 관리 로직
   const calculateTotalExpense = () => {
     return accounts.reduce((total, account) => {
       const price = parseFloat(account.price.replace(/[^\d.-]/g, '')) || 0; // 숫자 이외의 문자 제거 후 parseFloat
@@ -27,7 +29,7 @@ function AccountSummary({ accounts }) {
     }, 0);
   };
   
-
+  // 전체 자산 관리 로직
   const calculateTotalAssets = () => {
     return accounts.reduce((total, account) => {
       const price = parseFloat(account.price.replace(/[^\d.-]/g, '')) || 0; // 숫자 이외의 문자 제거 후 parseFloat

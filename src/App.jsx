@@ -13,7 +13,6 @@ function App() {
       const result = await response.json();
       setAccounts(result.data);
     };
-
     fetchAccounts();
   }, []);
 
