@@ -97,15 +97,14 @@
 ## 🔥 Trouble Shooting
 
 ### Issue1
-![image](https://github.com/simpleProjectTeam/projectFront/assets/127078118/7938bcfe-219d-42db-9163-d0bcfccf6bf3)
+### API 엔드포인트 문제
+![image](https://github.com/simpleProjectTeam/projectFront/assets/127078118/a88be8d7-b439-4e74-8a56-e879b228d7e4)
 
 #### 원인
+#### - 처음 엔드포인트를 ${id}로 설정해서 단건조회 관련 삭제, 수정 기능이 작동을 안함
 
 #### 해결 순서
-
+#### - 백엔드 담당 팀원과의 소통
+#### - 백엔드 개발 시 id가 아닌 no으로 API엔드포인트 설정
+#### - fetch 문법에 엔트포인트 no으로 변경 후 해결
 <br/>
-
-### Issue2
-
-<br>
-<br>
