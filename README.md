@@ -97,6 +97,7 @@
 ## 🔥 Trouble Shooting
 
 ### Issue1
+![image](https://github.com/simpleProjectTeam/projectFront/assets/127078118/7938bcfe-219d-42db-9163-d0bcfccf6bf3)
 
 #### 원인
 
